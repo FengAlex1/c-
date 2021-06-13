@@ -1,0 +1,100 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+//#include <stdio.h>// #include的意思是“包含”，包含stdio.h的文件
+                  //stdio -standard input output标准输入输出 （std-standard）（i-input）（o-output）。
+
+////int就是整型的意思；main前面的int表示main函数调用以后返回一个整型值。
+//int main()//主函数-main，是程序的入口，main函数有且有一个；
+//{
+//	printf("hello,cccc\n");//等于print function--打印函数, "\n" 表示输出后换行
+//	//printf是库函数，是c语言本身提供给我们使用的函数。所以要调用 #include <stdio>
+//	return 0;//return就是返回的意思，返回整数0。
+//}
+//int main()
+//{
+//    char ch = 'A';//内存
+//    printf("%c\n", ch);// %c--打印字符格式的数据,打印结果为：A
+//    return 0;
+//}
+
+//int main()
+//{
+//    int age = 20;
+//    printf("%d\n", age);//  %d--打印整型十进制数据,打印结果为:20
+//}
+
+//float--单精度浮点类型
+//int main()
+//{
+//    float f = 2.0;
+//    printf("%f\n", f);//打印结果为：5.000000。float类型能包含六个小数点。
+//    return 0;
+//}
+
+//double--双精度浮点类型
+//int main()
+//{
+//    double f = 3.14;
+//    printf("%f\n", f);//这里的打印可以用 %f，但是最好还是使用 %lf，表示使用双精度打印。
+//    return 0;
+//}
+
+//计算各个类型占用空间
+//int main()
+//{
+//    printf("%d\n", sizeof(char));//1byte
+//    printf("%d\n", sizeof(int));//4byte
+//    printf("%d\n", sizeof(long));//4or8 byte
+//    printf("%d\n", sizeof(short));//2byte
+//    printf("%d\n", sizeof(long long));//8byte
+//    printf("%d\n", sizeof(float));//4
+//    printf("%d\n", sizeof(double));//8
+//    return 0;
+//}
+//bit-比特位 < byte-字节 < kb < mb < gb < tb < pb
+//1byte=8bit; 1kb = 1024byte;  1mb = 1024kb;  1tb = 1024mb;  1pb = 1024mb
+
+
+//int main()
+//{
+//    //    年龄 20
+//    short age = 20;//向内存申请2个字节=16bit位，用来存放20
+//    float weight = 95.6f;//可能系统会报错，把95.6当作双精度浮点归到double类型；在95.6后面加一个“f”，说明为单精度浮点即可解决。
+//                         //向系统申请4个字节，存放小数。据C语言标准 sizeof(long) >= sizeof(int),根据平台不同，long可能是4或8.
+//    return 0;
+//}
+
+
+//int num2 = 20;//全局变量--定义在“代码块（{}）”之外的变量
+//int main()
+//{
+//    int num1 = 10;//局部变量--定义在“代码块（{}）之内的变量”
+//    return 0;
+//}
+
+
+//int a = 20;
+//int main()
+//{
+//    int a = 10;
+//    printf("%d\n", a);//打印结果为：10
+//    return 0;
+//}//局部变量名和全局变量名相同时，不会有冲突，但是局部变量优先。
+////建议全局变量和局部变量的名字不要相同，容易产生bug。
+////局部变量只能在自属局部的代码块{}中使用。
+// 
+int main()
+{
+    //计算两个数的和
+    int num1 = 0;
+    int num2 = 0;
+    int sum = 0;
+
+    //输入数据--使用输入函数scanf
+    scanf("%d%d", &num1, &num2);//取地址符号“&”，vs2019不能使用scanf，而要使用scanf_s
+    //int sum = 0;//这里是错误的，C语言语法规定，变量要定义在当前代码块最前面。
+    sum = num1 + num2;
+    printf("sum=%d", sum);
+    return 0;
+}
